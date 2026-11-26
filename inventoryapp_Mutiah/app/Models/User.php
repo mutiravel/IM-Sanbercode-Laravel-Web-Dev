@@ -18,10 +18,11 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = [
+     protected $fillable = [
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -45,5 +46,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+     // Relasi dengan Profile (One to One)
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    // Relasi dengan Transaction (One to Many)
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
     }
 }
