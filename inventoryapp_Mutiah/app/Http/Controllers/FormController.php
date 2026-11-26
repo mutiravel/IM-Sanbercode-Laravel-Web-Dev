@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
-    public function Form (){
+    public function Register (){
         return view('form');
     }
 

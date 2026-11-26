@@ -6,5 +6,6 @@ use App\Http\Controllers\FormController;
 
 Route::get('/',[DashboardController::class, 'Dashboard']);
 
-Route::get('/form',[FormController::class, 'Form']);
+Route::get('/Register',[FormController::class, 'Register']);
 Route::post('/welcome',[FormController::class, 'FormSubmit']);
+;

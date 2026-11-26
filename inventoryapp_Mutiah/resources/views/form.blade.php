@@ -1,60 +1,75 @@
-<!doctype html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buat Account Baru!</title>
-  </head>
-  <body>
-    <h2>Buat Account Baru!</h2>
-    <h3>Sign Up Form</h3>
-
+@extends('layouts.master')
+@section('title')
+Form Input
+@endsection
+@section('content')
+ <h2>Buat Account Baru!</h2>
+  <h3>Sign Up Form</h3>
     <form action="/welcome" method="POST">
         @csrf
-      <label for="firstName">First name:</label><br /><br />
-      <input type="text" id="firstName" name="firstName" /><br /><br />
 
-      <label for="lastName">Last name:</label><br /><br />
-      <input type="text" id="lastName" name="lastName" /><br /><br />
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="John">
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe">
+      </div>
+    
 
-      Gender:<br /><br />
-      <input type="radio" id="male" name="gender" value="Male" />
-      <label for="male">Male</label><br />
-
-      <input type="radio" id="female" name="gender" value="Female" />
-      <label for="female">Female</label><br />
-
-      <input type="radio" id="other" name="gender" value="Other" />
-      <label for="other">Other</label><br /><br />
+    <label for="Gender" class="form-label">Gender</label>
+     <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+      <label class="form-check-label" for="male">
+          Male
+      </label>
+    </div>
+    <div class="form-check">
+     <input class="form-check-input" type="radio" name="gender" id="female" value="female" checked>
+     <label class="form-check-label" for="female">
+        Female
+     </label>
+    </div>
+   
+     <br /><br />
 
       <label for="nationality">Nationality:</label><br /><br />
-      <select id="nationality" name="nationality">
-        <option value="Indonesian">Indonesian</option>
-        <option value="Malaysian">Malaysian</option>
-        <option value="Singaporean">Singaporean</option>
-        <option value="Other">Other</option></select
-      ><br /><br />
+     <select class="form-select" aria-label="Default select example">
+        <option selected>Indonesian</option>
+        <option value="1">Malaysian</option>
+        <option value="2">Singaporean</option>
+        <option value="3">Other</option>
+      </select>
+      <br /><br />
 
-      Language Spoken:<br /><br />
+     <label for="language">Language Spoken:</label><br /><br />
+       <div class="form-check">
+         <input class="form-check-input" type="checkbox" value="" id="bahasaIndonesia" >
+         <label class="form-check-label" for="bahasaIndonesia">
+          Bahasa Indonesia
+         </label>
+      </div>
+      <div class="form-check">
+         <input class="form-check-input" type="checkbox" value="" id="english" >
+         <label class="form-check-label" for="english">
+          English
+         </label>
+      </div>
+       <div class="form-check">
+         <input class="form-check-input" type="checkbox" value="" id="other" >
+         <label class="form-check-label" for="other">
+          Other
+         </label>
+      </div>
+      
+      
+      <br /><br />
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Bio</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
 
-      <input
-        type="checkbox"
-        id="indonesia"
-        name="language"
-        value="Bahasa Indonesia"
-      />
-      <label for="indonesia">Bahasa Indonesia</label><br />
-
-      <input type="checkbox" id="english" name="language" value="English" />
-      <label for="english">English</label><br />
-
-      <input type="checkbox" id="otherLanguage" name="language" value="Other" />
-      <label for="otherLanguage">Other</label><br /><br />
-
-      <label for="bio">Bio:</label><br /><br />
-      <textarea id="bio" name="bio" rows="7" cols="22"></textarea><br />
-
-      <input type="submit" value="Sign Up" />
+      <input type="submit" value="Sign Up" class="btn btn-success"/>
     </form>
-  </body>
-</html>
+@endsection
