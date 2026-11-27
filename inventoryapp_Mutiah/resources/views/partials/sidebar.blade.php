@@ -35,6 +35,14 @@
                 </span>
                 <span class="hide-menu">Form Input</span>
               </a>
+            </li>
+                  <li class="sidebar-item">
+              <a class="sidebar-link" href="/categories" aria-expanded="false">
+                <span>
+                  <iconify-icon icon="solar:widget-2-bold-duotone" class="fs-6"></iconify-icon>
+                </span>
+                <span class="hide-menu">Category</span>
+              </a>
             </li> 
           </ul>
           
